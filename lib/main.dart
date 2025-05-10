@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'routes/app_routes.dart';
 
@@ -11,11 +12,18 @@ class TriGardeningApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Tri Gardening',
-      initialRoute: AppRoutes.home,
-      getPages: AppRoutes.routes,
+    return ScreenUtilInit(
+      designSize: const Size(390, 844), // iPhone 13-like design size
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Tri Gardening',
+          initialRoute: AppRoutes.home,
+          getPages: AppRoutes.routes,
+        );
+      },
     );
   }
 }
