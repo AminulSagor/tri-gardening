@@ -28,7 +28,7 @@ class OrderFormView extends StatelessWidget {
               const SizedBox(height: 24),
 
               // Phone & Name
-              _buildTextField(label: "Name", controller: controller.phoneController),
+              _buildTextField(label: "Your Name", controller: controller.phoneController),
               const SizedBox(height: 16),
               _buildTextField(label: "Phone Number", controller: controller.nameController),
               const SizedBox(height: 16),
